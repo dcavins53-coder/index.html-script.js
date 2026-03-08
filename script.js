@@ -7,7 +7,8 @@ async function fetchData() {
         if (!response.ok) {
             throw new Error(`GET failed: ${response.status}`);
         }
-              
+        
+        
      return await response.json(); 
     } catch (error) {
         console.error("Fetch Error:", error);
@@ -44,12 +45,27 @@ function renderResult(title, content, imgUrl = null, isError = false) {
 
     output.append(h3, p);
 
-    if ("https://dog.ceo/api/breeds/image/random) {
-        const img = document.createElement('img');
-        img.src = imgUrl;
-        img.alt = "API Result Image";
-        output.appendChild(img);
+    async function fetchDog() {
+    const output = document.getElementById('output'); 
+    
+    try {
+        const response = await fetch("https://dog.ceo/api/breeds/image/random");
+        const data = await response.json();
+
+        if (data.status === "success") {
+            const img = document.createElement('img');
+            img.src = data.message; 
+            img.alt = "A cute dog";
+            img.style.maxWidth = "300px"; 
+            
+            output.appendChild(img);
+        }
+    } catch (error) {
+        console.error("Fetch failed:", error);
     }
+}
+
+fetchDog();
 }
 
 function main() {
