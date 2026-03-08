@@ -1,5 +1,5 @@
 "use strict"
-async function fetchData() {
+    async function fetchData() {
     try {
         
         const response = await fetch("https://dog.ceo/api/breeds/image/random");
@@ -31,7 +31,6 @@ async function postData(url, payload) {
         return { error: true, message: error.message };
     }
 }
-
 function renderResult(title, content, imgUrl = null, isError = false) {
     const output = document.getElementById('output');
     output.textContent = '';
