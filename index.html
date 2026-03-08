@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title> Dogs Breeds</title>
+    <link rel="shortcut icon" href="https://placehold.co/100" type="image/x-icon">
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+        max-width: 600px;
+        margin: auto;
+      }
+      .controls {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+      #output {
+        border: 2px solid #333;
+        border-radius: 8px;
+        padding: 20px;
+        background: #f9f9f9;
+        text-align: center;
+      }
+      img {
+        max-width: 100%;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+      .error {
+        color: #721c24;
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+      }
+      button {
+        padding: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Adoptions Grooming & Healthcare</h1>
+    <h2></h2>
+    <div class="controls">
+      <button id="get-btn"> Random Dog (GET)</button>
+      <button id="post-btn"> Submit (POST)</button>
+    </div>
+
+    <div id="output">Results will appear here...</div>
+<button id="updateBtn">Run Process</button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
